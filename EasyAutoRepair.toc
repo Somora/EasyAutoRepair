@@ -1,7 +1,7 @@
-## Interface: 110107, 50500, 11507
+## Interface: 110205, 50500, 11507
 ## Title: Somora's EasyAutoRepair
 ## Notes: Automatically repairs your gear at vendors. Uses guild funds first if available.
 ## Author: Somora
-## Version: 1.00
+## Version: 1.01
 ## SavedVariables: EasyAutoRepairDB
 EasyAutoRepair.lua
