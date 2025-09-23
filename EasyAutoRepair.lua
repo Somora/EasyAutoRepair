@@ -4,6 +4,16 @@ if EasyAutoRepairDB.enabled == nil then
     EasyAutoRepairDB.enabled = true
 end
 
+-- Localize global functions for minor performance gain
+local print = print
+local CreateFrame = CreateFrame
+local GetRepairAllCost = GetRepairAllCost
+local CanMerchantRepair = CanMerchantRepair
+local IsInGuild = IsInGuild
+local CanGuildBankRepair = CanGuildBankRepair
+local RepairAllItems = RepairAllItems
+local GetCoinTextureString = GetCoinTextureString
+
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("MERCHANT_SHOW")
 frame:RegisterEvent("PLAYER_LOGIN")
@@ -14,13 +24,9 @@ frame:SetScript("OnEvent", function(self, event)
         return
     end
 
-    if event == "MERCHANT_SHOW" then
-        if not EasyAutoRepairDB.enabled then return end
-        if not CanMerchantRepair() then return end
-
+    if event == "MERCHANT_SHOW" and EasyAutoRepairDB.enabled and CanMerchantRepair() then
         local repairAllCost, canRepair = GetRepairAllCost()
-
-        if repairAllCost > 0 and canRepair then
+        if canRepair and repairAllCost > 0 then
             if IsInGuild() and CanGuildBankRepair() then
                 RepairAllItems(true)
                 if GetRepairAllCost() == 0 then
@@ -40,6 +46,5 @@ end)
 SLASH_EASYAUTOREPAIR1 = "/ear"
 SlashCmdList["EASYAUTOREPAIR"] = function(msg)
     EasyAutoRepairDB.enabled = not EasyAutoRepairDB.enabled
-    local status = EasyAutoRepairDB.enabled and "enabled" or "disabled"
-    print("EasyAutoRepair: Auto repair is now " .. status .. ".")
+    print("EasyAutoRepair: Auto repair is now " .. (EasyAutoRepairDB.enabled and "enabled" or "disabled") .. ".")
 end

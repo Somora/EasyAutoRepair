@@ -9,3 +9,10 @@ All notable changes to this project will be documented in this file.
 
 ## Version 1.01 (2025-08-29):
 - Updated addon for The War Within build version 110205. (Ghosts of K'aresh)
+
+## Version 1.02 (2025-09-23):
+- Changed TOC version for incompatibility with client -> 110205 to 110200
+- Changed TOC to 3 files - Retail, MoP and Classic
+- Localized global functions.
+- Combined conditions for MERCHANT_SHOW.
+- Minor message consistency.

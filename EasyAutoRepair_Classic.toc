@@ -1,4 +1,4 @@
-## Interface: 110200
+## Interface: 11507
 ## Title: Somora's EasyAutoRepair
 ## Version: 1.02
 ## Author: Somora
