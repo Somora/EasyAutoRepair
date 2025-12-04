@@ -1,6 +1,6 @@
-## Interface: 110200
+## Interface: 110207
 ## Title: Somora's EasyAutoRepair
-## Version: 1.02
+## Version: 1.03
 ## Author: Somora
 ## Notes: Automatically repairs your gear at vendors. Uses guild funds first if available.
 ## SavedVariables: EasyAutoRepairDB

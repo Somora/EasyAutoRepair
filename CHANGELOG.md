@@ -16,3 +16,6 @@ All notable changes to this project will be documented in this file.
 - Localized global functions.
 - Combined conditions for MERCHANT_SHOW.
 - Minor message consistency.
+
+## Version 1.03 (2025-12-04):
+- Updated addon for The War Within build version 110207. (The Warning)
