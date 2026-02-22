@@ -19,3 +19,6 @@ All notable changes to this project will be documented in this file.
 
 ## Version 1.03 (2025-12-04):
 - Updated addon for The War Within build version 110207. (The Warning)
+
+## Version 1.04 (2026-02-22):
+- Updated addon for Midnight build version 120001.
