@@ -1,6 +1,8 @@
 ﻿# EasyAutoRepair
 
-**EasyAutoRepair** is a lightweight World of Warcraft addon that automatically repairs your equipment when visiting a vendor. It will use guild funds first if available and fall back to your personal gold if needed.
+**EasyAutoRepair** is a lightweight World of Warcraft addon that automatically repairs your equipment when visiting a vendor. It uses guild funds first when available, falls back to your own money when needed, and remembers your preference between sessions.
+
+Current release: `1.05`
 
 ---
 
@@ -8,17 +10,23 @@
 
 - ✅ Automatically repairs gear when opening a merchant window
 - 🏦 Uses guild bank funds first (if allowed)
-- 💰 Falls back to personal gold if guild funds aren't available
-- 🔁 Optional toggle via `/ear` slash command
+- 💰 Falls back to personal funds if guild funds do not fully cover repairs
+- 💬 Clear status and repair messages in chat
+- 🔁 Toggle or control the addon via `/ear` slash commands
 - 💾 Remembers your setting across sessions
+- 📦 Versioned for Retail, Classic, and MoP clients
 
 ---
 
 ## 💬 Slash Commands
 
-| Command | Description						   |
-|---------|------------------------------------|
-| `/ear`  | Toggle automatic repairs on or off |
+| Command | Description |
+|---------|-------------|
+| `/ear` | Toggle automatic repairs on or off |
+| `/ear on` | Enable automatic repairs |
+| `/ear off` | Disable automatic repairs |
+| `/ear toggle` | Toggle automatic repairs on or off |
+| `/ear status` | Show whether auto repair is enabled |
 
 ---
 
