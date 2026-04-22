@@ -1,6 +1,10 @@
 # EasyAutoRepair Changelog
 All notable changes to this project will be documented in this file.
 
+## Version 1.06 (2026-04-22):
+- Updated Retail TOC interface version for WoW build `120005`.
+- Synchronized Retail, Classic, and MoP addon versions to `1.06`.
+
 ## Version 1.05 (2026-04-04):
 - Improved addon initialization by loading saved settings through `ADDON_LOADED`.
 - Refined auto-repair flow to better handle guild-funded and personal-funded repairs.
