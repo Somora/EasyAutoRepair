@@ -2,7 +2,7 @@
 
 **EasyAutoRepair** is a lightweight World of Warcraft addon that automatically repairs your equipment when visiting a vendor. It uses guild funds first when available, falls back to your own money when needed, and remembers your preference between sessions.
 
-Current release: `1.06`
+Current release: `1.07`
 
 ---
 
@@ -13,8 +13,10 @@ Current release: `1.06`
 - 💰 Falls back to personal funds if guild funds do not fully cover repairs
 - 💬 Clear status and repair messages in chat
 - 🔁 Toggle or control the addon via `/ear` slash commands
+- ⚖️ Choose whether EasyAutoRepair, ElvUI, or Zygor should handle repairs
+- 🪟 Shows a provider selection popup when multiple repair addons are detected
 - 💾 Remembers your setting across sessions
-- 📦 Versioned for Retail, Classic, and MoP clients
+- 📦 Versioned for Retail, Mists, TBC, and Vanilla clients
 
 ---
 
@@ -27,6 +29,9 @@ Current release: `1.06`
 | `/ear off` | Disable automatic repairs |
 | `/ear toggle` | Toggle automatic repairs on or off |
 | `/ear status` | Show whether auto repair is enabled |
+| `/ear provider easyautorepair` | Let EasyAutoRepair handle repairs and disable ElvUI auto repair when available |
+| `/ear provider elvui` | Let ElvUI handle repairs and keep EasyAutoRepair repair logic inactive |
+| `/ear provider zygor` | Let Zygor handle repairs, enable Zygor auto repair, and keep EasyAutoRepair repair logic inactive |
 
 ---
 

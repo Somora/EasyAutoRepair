@@ -1,4 +1,4 @@
-## Interface: 120005
+## Interface: 11507
 ## Title: Somora's EasyAutoRepair
 ## Notes: Automatically repairs your gear at vendors. Lets you prefer EasyAutoRepair, ElvUI, or Zygor.
 ## Author: Somora

@@ -1,6 +1,25 @@
 # EasyAutoRepair Changelog
 All notable changes to this project will be documented in this file.
 
+## Version 1.07 (2026-05-06):
+- Reworked TOC packaging to match the EasyDelete layout with Retail, Mists, TBC, and Vanilla variants.
+- Added a repair provider preference so players can choose between EasyAutoRepair, ElvUI, and Zygor.
+- Automatically disables ElvUI auto repair when EasyAutoRepair is preferred.
+- Keeps EasyAutoRepair repair handling inactive when ElvUI is preferred.
+- Added new slash commands for provider selection and improved status output.
+- Added Zygor as an additional repair provider option.
+- Added direct Zygor auto-repair synchronization using Zygor's own `autorepair` profile setting.
+- Zygor is now fully enabled when selected as provider and disabled automatically when another provider is preferred.
+- ElvUI and Zygor auto-repair are both disabled automatically when EasyAutoRepair is the preferred provider.
+- Added a login/reload provider selection popup when multiple repair providers are detected.
+- The popup remembers your choice for the current detected provider setup.
+- Manual `/ear provider ...` selection now also suppresses repeat prompts for the same setup.
+- Improved ElvUI detection to handle load-order and API differences more reliably.
+- Fixed ElvUI provider syncing so EasyAutoRepair now correctly disables ElvUI auto repair by setting its expected string mode values.
+- Zygor provider switching now preserves the player's existing Zygor auto-repair mode and restores it when Zygor is re-enabled.
+- Split the addon into smaller internal modules for bootstrap, providers, popup handling, and slash commands.
+- Added provider drift detection so the popup returns when ElvUI or Zygor settings are changed outside EasyAutoRepair.
+
 ## Version 1.06 (2026-04-22):
 - Updated Retail TOC interface version for WoW build `120005`.
 - Synchronized Retail, Classic, and MoP addon versions to `1.06`.
