@@ -61,12 +61,12 @@ frame:SetScript("OnEvent", function(_, event, arg1)
         if EasyAutoRepair:IsZygorAvailable() then
             EasyAutoRepair:Print("Zygor detected. Preferred repair provider: " .. EasyAutoRepair:GetProviderLabel(EasyAutoRepairDB.provider) .. ".")
         end
-        EasyAutoRepair:MaybePromptForProviderSelection()
+        EasyAutoRepair:MaybePromptForProviderSelection("login")
         return
     end
 
     if event == "MERCHANT_SHOW" then
-        EasyAutoRepair:MaybePromptForProviderSelection()
+        EasyAutoRepair:MaybePromptForProviderSelection("merchant")
         EasyAutoRepair:HandleMerchantShow()
     end
 end)

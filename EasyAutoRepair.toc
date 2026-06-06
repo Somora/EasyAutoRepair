@@ -2,7 +2,7 @@
 ## Title: Somora's EasyAutoRepair
 ## Notes: Automatically repairs your gear at vendors. Lets you prefer EasyAutoRepair, ElvUI, or Zygor.
 ## Author: Somora
-## Version: 1.07
+## Version: 1.08
 ## DefaultState: enabled
 ## SavedVariables: EasyAutoRepairDB
 

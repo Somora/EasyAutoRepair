@@ -32,7 +32,7 @@ SlashCmdList.EASYAUTOREPAIR = function(msg)
     end
 
     if msg == "status" then
-        addon:MaybePromptForProviderSelection()
+        addon:MaybePromptForProviderSelection("status")
         addon:PrintStatus()
         return
     end

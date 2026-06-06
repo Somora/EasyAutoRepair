@@ -1,6 +1,10 @@
 # EasyAutoRepair Changelog
 All notable changes to this project will be documented in this file.
 
+## Version 1.08 (2026-06-06):
+- Reduced repeated login prompts by limiting drift-based provider re-prompts to active usage moments like vendors and `/ear status`.
+- Polished the provider popup behavior after real-world testing with ElvUI and Zygor.
+
 ## Version 1.07 (2026-05-06):
 - Reworked TOC packaging to match the EasyDelete layout with Retail, Mists, TBC, and Vanilla variants.
 - Added a repair provider preference so players can choose between EasyAutoRepair, ElvUI, and Zygor.

@@ -54,7 +54,7 @@ function addon:ShowProviderPopup(providers)
     StaticPopup_Show(self.POPUP_NAME)
 end
 
-function addon:MaybePromptForProviderSelection()
+function addon:MaybePromptForProviderSelection(trigger)
     local providers = self:GetAvailableProviders()
     if #providers <= 1 then
         return
@@ -64,6 +64,10 @@ function addon:MaybePromptForProviderSelection()
     local drifted = self:IsProviderConfigurationOutOfSync()
 
     if drifted then
+        if trigger == "login" and EasyAutoRepairDB.providerPromptSignature ~= "" then
+            return
+        end
+
         EasyAutoRepairDB.providerPromptSignature = ""
 
         if self.promptedSessionSignature == signature then
