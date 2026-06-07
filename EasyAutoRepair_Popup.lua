@@ -34,6 +34,7 @@ function addon:ShowProviderPopup(providers)
 
             if pendingPopupData then
                 EasyAutoRepairDB.providerPromptSignature = pendingPopupData.signature
+                EasyAutoRepairDB.providerPromptSignatures[pendingPopupData.signature] = true
             end
             pendingPopupData = nil
             addon:Print("Provider selection skipped. Use /ear provider easyautorepair, /ear provider elvui, or /ear provider zygor anytime.")
@@ -69,6 +70,7 @@ function addon:MaybePromptForProviderSelection(trigger)
         end
 
         EasyAutoRepairDB.providerPromptSignature = ""
+        EasyAutoRepairDB.providerPromptSignatures[signature] = nil
 
         if self.promptedSessionSignature == signature then
             return
@@ -80,7 +82,7 @@ function addon:MaybePromptForProviderSelection(trigger)
         return
     end
 
-    if EasyAutoRepairDB.providerPromptSignature == signature then
+    if EasyAutoRepairDB.providerPromptSignatures[signature] then
         return
     end
 

@@ -1,9 +1,14 @@
 # EasyAutoRepair Changelog
 All notable changes to this project will be documented in this file.
 
+## Version 1.09 (2026-06-07):
+- Remember multiple approved provider signatures so characters with different addon combinations do not keep re-triggering the provider popup.
+- Improved cross-character behavior when Zygor is enabled on some characters but not others.
+
 ## Version 1.08 (2026-06-06):
 - Reduced repeated login prompts by limiting drift-based provider re-prompts to active usage moments like vendors and `/ear status`.
 - Polished the provider popup behavior after real-world testing with ElvUI and Zygor.
+- Remembered multiple accepted provider setups so characters with different enabled addons do not keep re-triggering the popup.
 
 ## Version 1.07 (2026-05-06):
 - Reworked TOC packaging to match the EasyDelete layout with Retail, Mists, TBC, and Vanilla variants.

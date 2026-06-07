@@ -264,9 +264,12 @@ function addon:HandleMerchantShow()
 end
 
 function addon:SetProvider(provider)
+    local signature = self:BuildProviderSignature(self:GetAvailableProviders())
+
     EasyAutoRepairDB.provider = provider
-    EasyAutoRepairDB.providerPromptSignature = self:BuildProviderSignature(self:GetAvailableProviders())
-    self.promptedSessionSignature = EasyAutoRepairDB.providerPromptSignature
+    EasyAutoRepairDB.providerPromptSignature = signature
+    EasyAutoRepairDB.providerPromptSignatures[signature] = true
+    self.promptedSessionSignature = signature
     self:SyncProviderState(true)
 
     if provider == self.PROVIDER_ELVUI then

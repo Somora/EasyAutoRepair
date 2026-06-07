@@ -15,6 +15,7 @@ EasyAutoRepair.defaults = {
     elvUIDetected = false,
     zygorDetected = false,
     providerPromptSignature = "",
+    providerPromptSignatures = {},
     zygorAutoRepairMode = nil,
 }
 
@@ -36,6 +37,14 @@ function EasyAutoRepair:InitializeDatabase()
         if EasyAutoRepairDB[key] == nil then
             EasyAutoRepairDB[key] = value
         end
+    end
+
+    if type(EasyAutoRepairDB.providerPromptSignatures) ~= "table" then
+        EasyAutoRepairDB.providerPromptSignatures = {}
+    end
+
+    if type(EasyAutoRepairDB.providerPromptSignature) == "string" and EasyAutoRepairDB.providerPromptSignature ~= "" then
+        EasyAutoRepairDB.providerPromptSignatures[EasyAutoRepairDB.providerPromptSignature] = true
     end
 end
 
