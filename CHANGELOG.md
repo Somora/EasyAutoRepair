@@ -1,6 +1,10 @@
 # EasyAutoRepair Changelog
 All notable changes to this project will be documented in this file.
 
+## Version 1.10 (2026-06-17):
+- Updated the Retail TOC interface version for WoW build `120007`.
+- Synchronized Retail, Mists, TBC, and Vanilla addon versions to `1.10`.
+
 ## Version 1.09 (2026-06-07):
 - Remember multiple approved provider signatures so characters with different addon combinations do not keep re-triggering the provider popup.
 - Improved cross-character behavior when Zygor is enabled on some characters but not others.
