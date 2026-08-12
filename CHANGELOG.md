@@ -1,6 +1,10 @@
 # EasyAutoRepair Changelog
 All notable changes to this project will be documented in this file.
 
+## Version 1.11 (2026-08-12):
+- Updated the Retail TOC interface version for WoW build `120100`.
+- Synchronized Retail, Mists, TBC, and Vanilla addon versions to `1.11`.
+
 ## Version 1.10 (2026-06-17):
 - Updated the Retail TOC interface version for WoW build `120007`.
 - Synchronized Retail, Mists, TBC, and Vanilla addon versions to `1.10`.
