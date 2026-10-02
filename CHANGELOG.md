@@ -1,6 +1,12 @@
 # EasyAutoRepair Changelog
 All notable changes to this project will be documented in this file.
 
+## Version 1.12 (2026-10-02):
+- Added WoW: Forever client packaging through `EasyAutoRepair_Camelot.toc` with interface `16001`.
+- Fall back to personal funds when the client does not expose the guild bank repair API.
+- Synchronized all addon versions to `1.12`.
+- Documented Forever installation and in-client verification; Forever testing is still pending.
+
 ## Version 1.11 (2026-08-12):
 - Updated the Retail TOC interface version for WoW build `120100`.
 - Synchronized Retail, Mists, TBC, and Vanilla addon versions to `1.11`.

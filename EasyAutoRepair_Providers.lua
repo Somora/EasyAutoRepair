@@ -243,7 +243,8 @@ function addon:HandleMerchantShow()
         return
     end
 
-    if IsInGuild() and CanGuildBankRepair() then
+    -- Guild bank repairs are optional on clients without guild bank support.
+    if type(CanGuildBankRepair) == "function" and IsInGuild() and CanGuildBankRepair() then
         RepairAllItems(true)
 
         local remainingCost = GetRepairAllCost()
