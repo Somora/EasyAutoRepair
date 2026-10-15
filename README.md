@@ -2,7 +2,9 @@
 
 **EasyAutoRepair** is a lightweight World of Warcraft addon that automatically repairs your equipment when visiting a vendor. It uses guild funds first when available, falls back to your own money when needed, and remembers your preference between sessions.
 
-Current release: `1.12`
+Current release: `1.13`
+
+Retail interface target: `120105` (WoW `12.1.5`).
 
 ---
 
