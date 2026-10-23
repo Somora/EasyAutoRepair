@@ -2,7 +2,7 @@
 
 **EasyAutoRepair** is a lightweight World of Warcraft addon that automatically repairs your equipment when visiting a vendor. It uses guild funds first when available, falls back to your own money when needed, and remembers your preference between sessions.
 
-Current release: `1.13`
+Current release: `1.14`
 
 Retail interface target: `120105` (WoW `12.1.5`).
 
@@ -13,7 +13,8 @@ Retail interface target: `120105` (WoW `12.1.5`).
 - ✅ Automatically repairs gear when opening a merchant window
 - 🏦 Uses guild bank funds first (if allowed)
 - 💰 Falls back to personal funds if guild funds do not fully cover repairs
-- 💬 Clear status and repair messages in chat
+- 💬 Reports repair success only after a durability update confirms it
+- ⏳ Waits for the guild repair result before falling back to personal funds
 - 🔁 Toggle or control the addon via `/ear` slash commands
 - ⚖️ Choose whether EasyAutoRepair, ElvUI, or Zygor should handle repairs
 - 🪟 Shows a provider selection popup when multiple repair addons are detected
@@ -44,6 +45,12 @@ Retail interface target: `120105` (WoW `12.1.5`).
    `World of Warcraft/_retail_/Interface/AddOns/`
 3. Restart the game or type `/reload`.
 4. Enable the addon in the character select AddOns menu.
+
+Repair messages wait for a confirmed result. If no result is confirmed within
+five seconds, the addon reports that the outcome is unknown and stops without
+trying another payment source. Check your gear; close and reopen the vendor to
+start a new attempt. Closing the vendor or changing providers stops pending
+follow-up actions, but cannot cancel a request already sent to the server.
 
 ### WoW: Forever
 

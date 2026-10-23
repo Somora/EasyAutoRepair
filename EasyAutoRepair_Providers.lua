@@ -1,14 +1,7 @@
 local addon = EasyAutoRepair
 
 local C_AddOns = C_AddOns
-local GetMoney = GetMoney
-local GetRepairAllCost = GetRepairAllCost
-local GetCoinTextureString = GetCoinTextureString
 local IsAddOnLoaded = IsAddOnLoaded
-local CanMerchantRepair = CanMerchantRepair
-local CanGuildBankRepair = CanGuildBankRepair
-local IsInGuild = IsInGuild
-local RepairAllItems = RepairAllItems
 
 function addon:GetProviderLabel(provider)
     if provider == self.PROVIDER_ELVUI then
@@ -117,10 +110,6 @@ function addon:SetElvUIAutoRepair(enabled)
 
     engine.db.general.autoRepair = enabled and "GUILD" or "NONE"
 
-    if type(engine.SaveSettings) == "function" then
-        pcall(engine.SaveSettings, engine)
-    end
-
     return true
 end
 
@@ -159,6 +148,10 @@ function addon:SyncProviderState(notify)
     local zygorAvailable = self:IsZygorAvailable() and true or false
     local provider = EasyAutoRepairDB.provider
     local enabled = EasyAutoRepairDB.enabled
+
+    if not enabled or provider ~= self.PROVIDER_EAR then
+        self:CancelPendingRepair()
+    end
 
     EasyAutoRepairDB.elvUIDetected = elvUIAvailable
     EasyAutoRepairDB.zygorDetected = zygorAvailable
@@ -221,47 +214,6 @@ function addon:SyncProviderState(notify)
     if notify then
         self:Print("Repair provider set to EasyAutoRepair.")
     end
-end
-
-function addon:TryRepairWithPlayerMoney(cost)
-    if GetMoney() < cost then
-        self:Print("Not enough money to repair.")
-        return
-    end
-
-    RepairAllItems(false)
-    self:Print("Repaired with personal funds for " .. GetCoinTextureString(cost) .. ".")
-end
-
-function addon:HandleMerchantShow()
-    if not EasyAutoRepairDB.enabled or EasyAutoRepairDB.provider ~= self.PROVIDER_EAR or not CanMerchantRepair() then
-        return
-    end
-
-    local totalCost, canRepair = GetRepairAllCost()
-    if not canRepair or totalCost <= 0 then
-        return
-    end
-
-    -- Guild bank repairs are optional on clients without guild bank support.
-    if type(CanGuildBankRepair) == "function" and IsInGuild() and CanGuildBankRepair() then
-        RepairAllItems(true)
-
-        local remainingCost = GetRepairAllCost()
-        if remainingCost == 0 then
-            self:Print("Repaired with guild funds.")
-            return
-        end
-
-        if remainingCost < totalCost then
-            local guildPaid = totalCost - remainingCost
-            self:Print("Guild covered " .. GetCoinTextureString(guildPaid) .. ".")
-            self:TryRepairWithPlayerMoney(remainingCost)
-            return
-        end
-    end
-
-    self:TryRepairWithPlayerMoney(totalCost)
 end
 
 function addon:SetProvider(provider)

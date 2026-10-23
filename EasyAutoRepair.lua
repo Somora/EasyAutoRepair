@@ -50,8 +50,15 @@ end
 
 frame:RegisterEvent("ADDON_LOADED")
 frame:RegisterEvent("MERCHANT_SHOW")
+frame:RegisterEvent("MERCHANT_CLOSED")
+frame:RegisterEvent("PLAYER_LEAVING_WORLD")
 frame:RegisterEvent("PLAYER_LOGIN")
 frame:SetScript("OnEvent", function(_, event, arg1)
+    if event == "MERCHANT_CLOSED" or event == "PLAYER_LEAVING_WORLD" then
+        EasyAutoRepair:HandleMerchantClosed()
+        return
+    end
+
     if event == "ADDON_LOADED" then
         if arg1 == EasyAutoRepair.ADDON_NAME then
             EasyAutoRepair:InitializeDatabase()

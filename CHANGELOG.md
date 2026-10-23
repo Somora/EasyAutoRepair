@@ -1,6 +1,18 @@
 # EasyAutoRepair Changelog
 All notable changes to this project will be documented in this file.
 
+## Version 1.14 (2026-10-23):
+- Wait for a confirmed durability/cost update or a known guild refusal before falling back to personal funds.
+- Report repair success only after a durability update confirms a lower repair cost.
+- Cancel pending follow-up work on merchant close, world exit, disable, or provider change; prevent duplicate requests per vendor visit.
+- Stop unconfirmed requests after five seconds without guessing success or retrying with personal funds.
+- Added Lua 5.1 regression coverage for delayed/refused responses, popup handling, and provider integration.
+- Synchronized all supported client versions to `1.14`; in-client verification is still pending.
+- Fixed the provider popup's `OnCancel(dialog, data, reason)` callback so the second provider button works.
+- Escape dismisses the popup without selecting the second provider; dismissal is handled separately through `OnHide`.
+- Keep an open popup's provider data intact and retry later if no popup slot is available.
+- Removed the unnecessary optional ElvUI `SaveSettings` call; its repair module reads the profile setting directly.
+
 ## Version 1.13 (2026-10-15):
 - Updated the Retail TOC interface version to `120105` for WoW `12.1.5`.
 - Synchronized Retail, Forever, Mists, TBC, and Vanilla addon versions to `1.13`.
